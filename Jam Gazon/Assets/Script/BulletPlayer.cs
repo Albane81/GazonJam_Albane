@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BulletPlayer : MonoBehaviour
 {
     public float speed;
 
-    private Transform player;
+    private Transform ennemy;
     private Vector2 target;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        ennemy = GameObject.FindGameObjectWithTag("Ennemy").GetComponent<Transform>();
 
-        target = new Vector2(player.position.x, player.position.y);
+        target = new Vector2(ennemy.position.x, ennemy.position.y);
     }
 
     // Update is called once per frame
@@ -22,16 +22,16 @@ public class Bullet : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
 
-        if(transform.position.x == target.x && transform.position.y == target.y)
+        if (transform.position.x == target.x && transform.position.y == target.y)
         {
             DestroyBullet();
         }
 
     }
 
-     void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Ennemy"))
         {
 
             DestroyBullet();

@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 3335483571891164339}
   m_Layer: 0
   m_Name: Taupe
-  m_TagString: Untagged
+  m_TagString: Ennemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -27,6 +27,6 @@ public class SpawEnnemi : MonoBehaviour
     void SpawnTaupe()
     {
         Instantiate(TaupeSpawn[Random.Range(0, 1)], RandomPos(), Quaternion.identity);
-        Debug.Log("Instantiate");
+        //Debug.Log("Instantiate");
     }
 }
