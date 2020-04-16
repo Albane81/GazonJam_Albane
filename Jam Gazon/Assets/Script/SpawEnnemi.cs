@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawEnnemi : MonoBehaviour
 {
-    [SerializeField]private GameObject[] TaupeSpawn;
+    [SerializeField]private GameObject[] _taupeSpawn;
     [SerializeField] private float TimeSpawn = 10f;
 
 
@@ -26,6 +26,6 @@ public class SpawEnnemi : MonoBehaviour
 
     void SpawnTaupe()
     {
-        Instantiate(TaupeSpawn[Random.Range(0, 1)], RandomPos(), Quaternion.identity);
+        Instantiate(_taupeSpawn[Random.Range(0, 1)], RandomPos(), Quaternion.identity);
     }
 }
