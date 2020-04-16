@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SpawEnnemi : MonoBehaviour
 {
-    [SerializeField]private GameObject[] _taupeSpawn;
+    [SerializeField]private GameObject[] TaupeSpawn;
     [SerializeField] private float TimeSpawn = 10f;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnTaupe",TimeSpawn,5);
+        InvokeRepeating("SpawnTaupe",3,TimeSpawn);
     }
 
     Vector2 RandomPos()
@@ -26,6 +26,7 @@ public class SpawEnnemi : MonoBehaviour
 
     void SpawnTaupe()
     {
-        Instantiate(_taupeSpawn[Random.Range(0, 1)], RandomPos(), Quaternion.identity);
+        Instantiate(TaupeSpawn[Random.Range(0, 1)], RandomPos(), Quaternion.identity);
+        Debug.Log("Instantiate");
     }
 }
