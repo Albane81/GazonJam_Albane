@@ -537,11 +537,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Template2D
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: D:\Projet\GazonJam\Jam Gazon\Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 005308c7f333d701
   metroApplicationDescription: Template_2D
   wsaImages: {}
   metroTileShortName: 
