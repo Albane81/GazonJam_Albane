@@ -8,8 +8,8 @@ public class PlayerMove : MonoBehaviour
 
     float horizontal;
     float vertical;
+    public Vector2 Direction = Vector2.zero;
 
-   
     [Header("Speed Player")]
     public float runSpeed = 20.0f;
 
@@ -21,31 +21,28 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-       
-        
+
+
     }
 
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
-        vertical = Input.GetAxisRaw("Vertical");
 
-        if (TimeShots <= 0)
-        {
-            Instantiate(bullet, transform.position, Quaternion.identity);
-            TimeShots = startTimeShots;
-        }
-        else
-        {
-            TimeShots -= Time.deltaTime;
-        }
+
 
     }
 
     private void FixedUpdate()
     {
-        body.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
+        body.velocity = Direction * runSpeed;
     }
 
+    public void Shot()
+    {
+
+            Instantiate(bullet, transform.position, Quaternion.identity);
+            TimeShots = startTimeShots;
    
+    }
+
 }

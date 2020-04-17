@@ -7,6 +7,7 @@ public class BulletEnnemy : MonoBehaviour
     public float speed;
 
     private Transform player;
+    public GameObject _player;
     private Vector2 target;
 
     // Start is called before the first frame update
@@ -29,11 +30,13 @@ public class BulletEnnemy : MonoBehaviour
 
     }
 
-     void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-
+            Debug.Log(other);
+            Destroy(other.gameObject);
+            //ennemy.SetActive(false);
             DestroyBullet();
         }
     }

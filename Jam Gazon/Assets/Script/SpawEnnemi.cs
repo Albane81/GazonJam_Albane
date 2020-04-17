@@ -4,14 +4,26 @@ using UnityEngine;
 
 public class SpawEnnemi : MonoBehaviour
 {
-    [SerializeField]private GameObject[] TaupeSpawn;
-    [SerializeField] private float TimeSpawn = 10f;
+    [SerializeField]private GameObject taupeSpawn;
+    //public GameObject Ennemy;
+    [SerializeField] private float TimeSpawn;
+    [SerializeField] private float DelaySpawn;
+    private static int ennemy;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnTaupe",3,TimeSpawn);
+        ennemy = 0;
+        InvokeRepeating("SpawnTaupe",TimeSpawn,DelaySpawn);
+    }
+
+    void Update()
+    {
+        if(ennemy >= 3)
+        {
+            CancelInvoke("SpawnTaupe");
+        }
     }
 
     Vector2 RandomPos()
@@ -26,7 +38,8 @@ public class SpawEnnemi : MonoBehaviour
 
     void SpawnTaupe()
     {
-        Instantiate(TaupeSpawn[Random.Range(0, 1)], RandomPos(), Quaternion.identity);
+        Instantiate(taupeSpawn, RandomPos(), Quaternion.identity);
+        ++ennemy;
         //Debug.Log("Instantiate");
     }
 }
