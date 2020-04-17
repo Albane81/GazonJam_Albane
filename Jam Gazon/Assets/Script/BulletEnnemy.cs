@@ -9,6 +9,8 @@ public class BulletEnnemy : MonoBehaviour
     private Transform player;
     public GameObject _player;
     private Vector2 target;
+    //public float damage;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +18,7 @@ public class BulletEnnemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         target = new Vector2(player.position.x, player.position.y);
+        
     }
 
     // Update is called once per frame
@@ -35,11 +38,16 @@ public class BulletEnnemy : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log(other);
-            Destroy(other.gameObject);
-            //ennemy.SetActive(false);
-            DestroyBullet();
+           // Damage();
+            PlayerMove.health -= 10f;
+            //DestroyBullet();
         }
     }
+
+    //void Damage()
+    //{
+    //    HealthPlayer.startHealth -= 10f;
+    //}
 
     void DestroyBullet()
     {

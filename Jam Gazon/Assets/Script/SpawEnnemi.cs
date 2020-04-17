@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpawEnnemi : MonoBehaviour
 {
-    [SerializeField]private GameObject taupeSpawn;
+    public GameObject taupeSpawn;
     //public GameObject Ennemy;
     [SerializeField] private float TimeSpawn;
     [SerializeField] private float DelaySpawn;

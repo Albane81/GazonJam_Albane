@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -18,18 +19,29 @@ public class PlayerMove : MonoBehaviour
     private float TimeShots;
     public float startTimeShots;
 
+    [Header("Health")]
+    public float MaxHealth = 100;
+    public static float health;
+    public Image healthBar;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-
+        
+        health = MaxHealth;
 
     }
 
     void Update()
     {
+        healthBar.fillAmount = health / MaxHealth;
 
+        if (health <= 0)
+        {
 
-
+            Debug.Log("mort");
+            //Die();
+        }
     }
 
     private void FixedUpdate()
@@ -45,4 +57,5 @@ public class PlayerMove : MonoBehaviour
    
     }
 
+   
 }
