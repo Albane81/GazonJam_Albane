@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -23,12 +24,19 @@ public class PlayerMove : MonoBehaviour
     public float MaxHealth = 100;
     public static float health;
     public Image healthBar;
+    //public GameObject gameOver, restart, player;
+
+    private Ennemy ennemy;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
         
         health = MaxHealth;
+        //gameOver.SetActive(false);
+        //restart.SetActive(false);
+        //ennemy = GetComponent<Ennemy>();
+        
 
     }
 
@@ -39,6 +47,7 @@ public class PlayerMove : MonoBehaviour
         if (health <= 0)
         {
 
+            SceneManager.LoadScene("RestartScene");
             Debug.Log("mort");
             //Die();
         }

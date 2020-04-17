@@ -20,7 +20,7 @@ public class SpawEnnemi : MonoBehaviour
 
     void Update()
     {
-        if(ennemy >= 3)
+        if(ennemy >= 5)
         {
             CancelInvoke("SpawnTaupe");
         }

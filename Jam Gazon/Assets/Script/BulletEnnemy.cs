@@ -39,7 +39,7 @@ public class BulletEnnemy : MonoBehaviour
         {
             Debug.Log(other);
            // Damage();
-            PlayerMove.health -= 10f;
+           PlayerMove.health -= 10f;
             //DestroyBullet();
         }
     }

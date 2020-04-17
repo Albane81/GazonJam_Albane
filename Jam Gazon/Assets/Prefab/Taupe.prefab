@@ -372,7 +372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   stoppingDistance: 6
-  startTimeShots: 2
+  startTimeShots: 3
   bullet: {fileID: 2156821503322198856, guid: f10a1cebeef6a16428990ebdd76f99ae, type: 3}
   player: {fileID: 0}
 --- !u!61 &3335483571891164339
